@@ -36,20 +36,20 @@ if __name__ == "__main__":
 import math
 
 def main():
-    # Prompt the user for the lengths of the sides of the triangle
+    # Will prompt the user for the lengths of the sides of the triangle
     a = float(input("Enter the length of side a: "))
     b = float(input("Enter the length of side b: "))
     c = float(input("Enter the length of side c: "))
 
-    # Check if the triangle inequality holds
+    # Will check if the triangle inequality holds
     if a + b > c and a + c > b and b + c > a:
         # Calculate the semi-perimeter
         s = (a + b + c) / 2
 
-        # Calculate the area using Heron's formula
+        # Will calculate the area using Heron's formula
         area = math.sqrt(s * (s - a) * (s - b) * (s - c))
 
-        # Output the area
+        # Will output the area
         print(f"The area of the triangle is: {area}")
     else:
         print("The provided lengths do not form a valid triangle.")
