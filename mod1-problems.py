@@ -1,86 +1,47 @@
 # 1. Create a program that prints the following output to the screen: "Water. Earth. Fire. Air. Long ago, the four nations lived together in harmony. Then, everything changed when the Fire Nation attacked."
-def main():
-    output = ("Water. Earth. Fire. Air. Long ago, the four nations lived together in harmony. "
-              "Then, everything changed when the Fire Nation attacked.")
-    print(output)
 
-if __name__ == "__main__":
-    main()
+# A simple line of string
+print("Water. Earth. Fire. Air. Long ago, the four nations lived together in harmony. Then, everything changed when the Fire Nation attacked.")
 
 # 2. Create a program that prompts for 2 numbers and then outputs the addition, subtraction, multiplication, and division of the first number by the second number.
-def main():
-    # Will prompt the user for two numbers
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
 
-    # Will perform calculations
-    addition = num1 + num2
-    subtraction = num1 - num2
-    multiplication = num1 * num2
+# Prompts user for two numbers
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
 
-    # Will handle division with a check for division by zero
-    if num2 != 0:
-        division = num1 / num2
-    else:
-        division = "undefined (cannot divide by zero)"
+# Performs calculations based on numbers inserted and prints the final results
+print("Addition:", num1 + num2)
+print("Subtraction:", num1 - num2)
+print("Multiplication:", num1 * num2)
+# Will stop division by zero
+print("Division:", num1 / num2 if num2 != 0 else "undefined (division by zero)")
 
-    # Will output the results
-    print(f"Addition: {addition}")
-    print(f"Subtraction: {subtraction}")
-    print(f"Multiplication: {multiplication}")
-    print(f"Division: {division}")
-
-if __name__ == "__main__":
-    main()
 # 3. Create a program that prompts for the side lengths of a triangle and computes the area using Heron's formula. (https://en.wikipedia.org/wiki/Heron%27s_formula)
 import math
 
-def main():
-    # Will prompt the user for the lengths of the sides of the triangle
-    a = float(input("Enter the length of side a: "))
-    b = float(input("Enter the length of side b: "))
-    c = float(input("Enter the length of side c: "))
+# Input the lengths of the triangle's sides
+a = float(input("Enter side a: "))
+b = float(input("Enter side b: "))
+c = float(input("Enter side c: "))
 
-    # Will check if the triangle inequality holds
-    if a + b > c and a + c > b and b + c > a:
-        # Calculate the semi-perimeter
-        s = (a + b + c) / 2
+# Will calculate the area using Heron's formula from the numbers inputed
+s = (a + b + c) / 2
+area = math.sqrt(s * (s - a) * (s - b) * (s - c))
 
-        # Will calculate the area using Heron's formula
-        area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+# Will print the area that was calculated
+print("Area:", area)
+# Wont work if the numbers cant equal a triangle
 
-        # Will output the area
-        print(f"The area of the triangle is: {area}")
-    else:
-        print("The provided lengths do not form a valid triangle.")
-
-if __name__ == "__main__":
-    main()
 # 4. Create a program that computes different statistics given five numbers including the total, average, minimum, maximum, range, and standard deviation (https://en.wikipedia.org/wiki/Standard_deviation).
 import statistics
 
-def main():
-    # Will prompt the user for five numbers
-    numbers = []
-    for i in range(1, 6):
-        num = float(input(f"Enter number {i}: "))
-        numbers.append(num)
+# Input five numbers and saves them for calculations
+numbers = [float(input("Enter a number: ")) for _ in range(5)]
 
-    # Will calculate statistics
-    total = sum(numbers)
-    average = total / len(numbers)
-    minimum = min(numbers)
-    maximum = max(numbers)
-    range_value = maximum - minimum
-    std_deviation = statistics.stdev(numbers)
-
-    # Will output the statistics
-    print(f"Total: {total}")
-    print(f"Average: {average}")
-    print(f"Minimum: {minimum}")
-    print(f"Maximum: {maximum}")
-    print(f"Range: {range_value}")
-    print(f"Standard Deviation: {std_deviation}")
-
-if __name__ == "__main__":
-    main()
+# Compute and print statistics for all six
+print("Total:", sum(numbers))
+print("Average:", sum(numbers) / 5)
+print("Minimum:", min(numbers))
+print("Maximum:", max(numbers))
+print("Range:", max(numbers) - min(numbers))
+print("Standard Deviation:", statistics.stdev(numbers))
