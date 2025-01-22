@@ -17,6 +17,7 @@ print("Multiplication:", num1 * num2)
 print("Division:", num1 / num2 if num2 != 0 else "undefined (division by zero)")
 
 # 3. Create a program that prompts for the side lengths of a triangle and computes the area using Heron's formula. (https://en.wikipedia.org/wiki/Heron%27s_formula)
+
 import math
 
 # Input the lengths of the triangle's sides
@@ -33,6 +34,7 @@ print("Area:", area)
 # Wont work if the numbers cant equal a triangle
 
 # 4. Create a program that computes different statistics given five numbers including the total, average, minimum, maximum, range, and standard deviation (https://en.wikipedia.org/wiki/Standard_deviation).
+
 import statistics
 
 # Input five numbers and saves them for calculations
@@ -45,3 +47,4 @@ print("Minimum:", min(numbers))
 print("Maximum:", max(numbers))
 print("Range:", max(numbers) - min(numbers))
 print("Standard Deviation:", statistics.stdev(numbers))
+# Will show you the final results of the calculations
